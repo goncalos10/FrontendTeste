@@ -50,7 +50,6 @@ export class ChecklistComponent implements OnInit {
   ngOnInit(): void {
     this.loggedUtilizador = this.authenticationService.userValue.response.data;
     this.editarChecklistForm  = this.fb.group({
-      nome: ['', Validators.required],
       id_prod_checklist: ['', Validators.required],
       id_utilizador_checklist: ['', Validators.required],
       data: ['', Validators.required],
@@ -113,7 +112,7 @@ export class ChecklistComponent implements OnInit {
     if (this.produto === undefined) {
       this.router.navigate(['/']);
     } else {
-      this.pageTitle = `Adicionar Checklist: ${this.produto.nome}`;
+      this.pageTitle = `Adicionar Checklist:`;
       // Update the data on the form
       this.editarChecklistForm.patchValue({
         nome: this.produto.nome,

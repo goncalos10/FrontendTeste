@@ -8,11 +8,6 @@
                             <i class="material-icons">all_inclusive</i>
                         </div>
                         <p class="card-category">Estatisticas 1:</p>
-                        <h3 class="card-title" *ngFor="let c of carenciados">
-                                <div>
-                                    {{ carenciados?.length }}
-                                </div>
-                        </h3>
                     </div>
                 </div>
             </div>
@@ -23,11 +18,6 @@
                             <i class="material-icons">recent_actors</i>
                         </div>
                         <p class="card-category">Estatisticas 2:</p>
-                        <h3 class="card-title" *ngFor="let fornecedor of fornecedores; count as c">
-                            <div *ngIf="fornecedor.id">
-                                {{c}}
-                            </div>
-                        </h3>
                     </div>
                 </div>
             </div>
@@ -38,11 +28,6 @@
                             <i class="material-icons">group</i>
                         </div>
                         <p class="card-category">Estatisticas 3:</p>
-                        <h3 class="card-title" *ngFor="let funcionario of funcionarios; count as c">
-                            <div *ngIf="funcionario.id">
-                                {{c}}
-                            </div>
-                        </h3>
                     </div>
                 </div>
             </div>

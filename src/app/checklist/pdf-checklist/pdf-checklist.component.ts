@@ -30,8 +30,8 @@ export class PdfChecklistComponent implements OnInit {
   displayMessage: { [key: string]: string } = {};
 
   @ViewChild('content', {static: false}) el!: ElementRef;
-  private produto: Produto;
-  private utilizador: Utilizador;
+  produto: Produto;
+  utilizador: Utilizador;
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
