@@ -1,0 +1,31 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-info">
+                <h4 class="card-title">{{pageTitle}}</h4>
+            </div>
+
+            <div class="container">
+                <form (ngSubmit)="saveCategoria()" [formGroup]="editarCategoriasForm">
+                    <div class="form-group">
+                        <label for="id_utilizador">Nome fornecedor</label>
+                        <p>
+                        <select formControlName="id_utilizador" >
+                            <option name="id_utilizador" id="id_utilizador" *ngFor="let utilizador of utilizador"
+                                    value="{{utilizador.id}}">{{utilizador.nome}}</option>
+                        </select>
+                        <app-control-messages [control]="editarCategoriasForm.get('id_utilizador')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" placeholder="Insira o nome"
+                               value="" id="nome" formControlName="nome" >
+                        <app-control-messages [control]="editarCategoriasForm.get('nome')"></app-control-messages>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="!editarCategoriasForm.valid">Submeter</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

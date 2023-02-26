@@ -1,0 +1,17 @@
+.pointer {
+    cursor: pointer;
+}
+
+.invalid-feedback {
+    display: unset;
+}
+
+.hidden {
+    display: none;
+}
+
+.red-snackbar {
+    background: linear-gradient(60deg, #6487bf, #7e8187);
+    color: white;
+  }
+

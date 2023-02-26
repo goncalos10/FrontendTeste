@@ -1,0 +1,53 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Lista de Clientes</h4>
+            </div>
+            <div class="card-content table-responsive table-full-width">
+                <table class="table table-hover">
+                    <thead class="text-danger">
+                    <th class="text-center">ID</th>
+                    <th>Nome</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Telemovel</th>
+                    <th class="text-center">Ações</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let fornecedor of fornecedores">
+                        <td class="text-center"> {{fornecedor.id}} </td>
+                        <td> {{fornecedor.nome}} </td>
+                        <td> {{fornecedor.username}} </td>
+                        <td> {{fornecedor.email}} </td>
+                        <td> {{fornecedor.telemovel}}</td>
+                        <td class="td-actions text-center">
+                            <button [routerLink]="['/utilizadores','editar', fornecedor.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Editar Cliente"
+                                    type="button">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Remover Utilizador"
+                                    type="button"
+                                    (click)="openDialog(fornecedor.id, fornecedor.id_tipo_utilizador)">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-actions text-center">
+                            <button [routerLink]="['/utilizadores','editar', 0]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Adicionar Cliente"
+                                    type="button">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

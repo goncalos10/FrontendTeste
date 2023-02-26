@@ -1,0 +1,36 @@
+<div class="logo">
+    <a class="simple-text" routerLink="/">
+        <div class="logo-img"><img alt="Logo" src="/assets/img/logotipo.jpg"/></div>
+        SIFINOX
+    </a>
+</div>
+<div class="sidebar-wrapper">
+    <div *ngIf="isMobileMenu()">
+        <ul class="nav navbar-nav nav-mobile-menu">
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="material-icons">person</i>
+                    <p><span class="d-lg-none d-md-block">{{logedUtilizador.nome}}</span></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <ul class="nav">
+        <li *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item" routerLinkActive="active">
+            <a [routerLink]="[menuItem.path]" class="nav-link">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+    <div *ngIf="isMobileMenu()">
+        <ul class="nav navbar-nav nav-mobile-menu">
+            <li class="nav-item">
+                <a (click)="logout()" class="nav-link pointer">
+                    <i class="material-icons">logout</i>
+                    <p><span class="d-lg-none d-md-block">Logout</span></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

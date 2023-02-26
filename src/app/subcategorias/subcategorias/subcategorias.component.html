@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Lista de Subcategorias</h4>
+            </div>
+            <div class="card-content table-responsive table-full-width">
+                <table class="table table-hover">
+                    <thead class="text-danger">
+                    <th class="text-center">ID</th>
+                    <th>Nome</th>
+                    <th class="text-center">Ações</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let subcategoria of subcategorias">
+                        <td class="text-center"> {{subcategoria.id}} </td>
+                        <td> {{subcategoria.nome}} </td>
+
+                        <td class="td-actions text-center">
+                            <button [routerLink]="['/produtos', subcategoria.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Ver Produtos"
+                                    type="button">
+                                <i class="material-icons">visibility</i>
+                            </button>
+                            <button [routerLink]="['/produtos','adicionar', subcategoria.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Adicionar Produto"
+                                    type="button">
+                                <i class="material-icons">add</i>
+                            </button>
+                            <button [routerLink]="['/subcategoria','editar', subcategoria.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Editar Subcategoria"
+                                    type="button">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Remover Subcategoria"
+                                    type="button">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-actions text-center">
+                            <button [routerLink]="['/subcategorias','editar', 0]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Adicionar Subcategoria"
+                                    type="button">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

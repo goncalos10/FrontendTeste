@@ -1,0 +1,12 @@
+<div class="container">
+
+    <div class="products-container">
+
+        <div  *ngFor="let subcategoria of subcategorias"  [routerLink]="[subcategoria.id]" class="product" data-name="p-1">
+            <!--- <img src="images/1.png" alt=""> --->
+            <button>{{subcategoria.nome}}</button>
+        </div>
+
+    </div>
+
+</div>

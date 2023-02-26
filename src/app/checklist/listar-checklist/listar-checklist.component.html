@@ -1,0 +1,36 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Lista de Checklists</h4>
+            </div>
+            <div class="card-content table-responsive table-full-width">
+                <table class="table table-hover">
+                    <thead class="text-danger">
+                    <th class="text-center">ID Checklist</th>
+                    <th>Encomenda</th>
+                    <th>Estado</th>
+                    <th>Data</th>
+                    <th class="text-center">Ações</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let checklist of checklists">
+                        <td class="text-center"> {{checklist.id}} </td>
+                        <td> {{checklist.encomenda}} </td>
+                        <td> {{checklist.estado}} </td>
+                        <td> {{checklist.data | date}} </td>
+                        <td class="td-actions text-center">
+                            <button [routerLink]="['/checklists/pdf/', checklist.id,
+                            checklist.id_prod_checklist, checklist.id_utilizador_checklist]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Ver Checklist"
+                                    type="button">
+                                <i class="material-icons">visibility</i>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+select {
+    padding: 5px 8px;
+    width: 30%;
+    box-shadow: none;
+    border: 2px solid gray;
+    background-image: none;
+    -webkit-appearance: none;
+}

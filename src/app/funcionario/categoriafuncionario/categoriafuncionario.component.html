@@ -1,0 +1,13 @@
+<div class="container">
+
+    <div class="products-container">
+
+        <div  *ngFor="let categoria of categorias" [routerLink]="[categoria.id]" class="product">
+            <!--- <img src="images/1.png" alt=""> --->
+            <button>{{categoria.nome}}</button>
+        </div>
+
+
+    </div>
+
+</div>

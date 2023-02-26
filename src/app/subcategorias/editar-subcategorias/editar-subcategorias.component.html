@@ -1,0 +1,40 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-info">
+                <h4 class="card-title">{{pageTitle}}</h4>
+            </div>
+
+            <div class="container">
+                <form (ngSubmit)="saveSubcategoria()" [formGroup]="editarSubcategoriasForm">
+                    <div class="form-group">
+                        <label for="id_cliente">Cliente</label>
+                        <p>
+                            <select #idcliente name="id_cliente" formControlName="id_cliente"
+                                    (change)="onChangeUser(idcliente.value)">
+                                <option name="id_cliente" id="id_cliente" *ngFor="let cliente of clientes" value="{{cliente.id}}">{{cliente.nome}}</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_categoria">Categoria</label>
+                        <p>
+                            <select name="id_categoria"
+                                    formControlName="id_categoria" >
+                                <option name="id_categoria" id="id_categoria"
+                                        *ngFor="let categoria of categorias" value="{{categoria.id}}">{{categoria.nome}}</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" placeholder="Insira o nome da subcategoria"
+                               id="nome" formControlName="nome" >
+                        <app-control-messages [control]="editarSubcategoriasForm.get('nome')"></app-control-messages>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" [disabled]="!editarSubcategoriasForm.valid">Submeter</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

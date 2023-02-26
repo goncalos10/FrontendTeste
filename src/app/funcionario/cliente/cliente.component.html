@@ -1,0 +1,12 @@
+<div class="container">
+
+    <div class="products-container">
+
+        <div  *ngFor="let cliente of clientes" [routerLink]="[cliente.id]" class="product">
+            <!--- <img src="images/1.png" alt=""> --->
+            <button>{{cliente.nome}}</button>
+        </div>
+
+    </div>
+
+</div>

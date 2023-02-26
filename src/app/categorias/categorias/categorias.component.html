@@ -1,0 +1,57 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Lista de Categorias</h4>
+            </div>
+            <div class="card-content table-responsive table-full-width">
+                <table class="table table-hover">
+                    <thead class="text-danger">
+                    <th class="text-center">ID</th>
+                    <th>Nome</th>
+                    <th class="text-center">Ações</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let categoria of categorias">
+                        <td class="text-center"> {{categoria.id}} </td>
+                        <td> {{categoria.nome}} </td>
+
+                        <td class="td-actions text-center">
+                            <button [routerLink]="['/subcategorias', categoria.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Ver Subcategorias"
+                                    type="button">
+                                <i class="material-icons">visibility</i>
+                            </button>
+                            <button [routerLink]="['/subcategorias', categoria.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Adicionar Subcategoria"
+                                    type="button">
+                                <i class="material-icons">add</i>
+                            </button>
+                            <button [routerLink]="['/categorias','editar', categoria.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Editar Categoria"
+                                    type="button">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Remover Categoria"
+                                    type="button"
+                                    (click)="openDialog(categoria.id)">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-actions text-center">
+                            <button [routerLink]="['/categorias','editar', 0]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                    matTooltip="Adicionar Categoria"
+                                    type="button">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

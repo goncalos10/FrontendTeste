@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">
+<head><style>@page { size: A5 }</style></head>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div id="content" #content  class="card A5">
+            <div class="card-header card-header-info">
+                <h5 class="card-title">Checklist {{checklist.id}}</h5>
+                <p>Prod: {{produto.nome}} | Data: {{checklist.data | date}} | Nº: {{checklist.encomenda}}</p>
+            </div>
+            <div class="container">
+                    <div class="form-group">
+                        {{produto.pergunta1}}
+                        {{checklist.resposta1}}
+                    </div>
+                    <div class="form-group">
+                        {{produto.pergunta2}}
+                        {{checklist.resposta2}}
+                    </div>
+                    <div class="form-group">
+                        {{produto.pergunta3}}
+                        {{checklist.resposta3}}
+                    </div>
+                    <div class="form-group">
+                        {{produto.pergunta4}}
+                        {{checklist.resposta4}}
+                    </div>
+                    <div class="form-group">
+                        {{produto.pergunta5}}
+                        {{checklist.resposta5}}
+                    </div>
+                    <div class="form-group">
+                        {{produto.pergunta6}}
+                        {{checklist.resposta6}}
+                    </div>
+                    <div class="form-group">
+                        {{produto.pergunta7}}
+                        {{checklist.resposta7}}
+                    </div>
+                    <div class="form-group">
+                        {{produto.pergunta8}}
+                        {{checklist.resposta8}}
+                    </div>
+                    <div class="form-group">
+                        {{produto.pergunta9}}
+                        {{checklist.resposta9}}
+                    </div>
+                    <div class="form-group">
+                        <div class="uniquerow">
+                        {{produto.pergunta10}}
+                        {{checklist.resposta10}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="uniquerow">
+                            Utilizador: <p>{{utilizador.nome}}&nbsp;
+                        </div>
+                        <div class="uniquerow">
+                            Data
+                            <p>{{checklist.data | date}}</p>
+                        </div>
+                    </div>
+            </div>
+            </div>
+
+
+        <button (click)="converterPdf()">Gerar PDF</button>
+        &nbsp;
+        <button (click)="imprimirDoc('content')">Imprimir</button>
+    </div>
+</div>
+

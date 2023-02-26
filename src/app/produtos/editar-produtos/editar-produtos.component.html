@@ -1,0 +1,101 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-info">
+                <h4 class="card-title">{{pageTitle}}</h4>
+            </div>
+
+            <div class="container">
+                <form (ngSubmit)="saveProduto()" [formGroup]="editarProdutoForm">
+                    <div class="form-group">
+                        <label>Cliente</label>
+                        <p>
+                            <select #idcliente name="id_cliente" formControlName="id_cliente"
+                                    (change)="onChangeUser(idcliente.value)">
+                                <option
+                                        *ngFor="let cliente of clientes" value="{{cliente.id}}">{{cliente.nome}}</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Categoria</label>
+                        <p>
+                            <select #idcategoria name="id_categoria"
+                                    formControlName="id_categoria"
+                                    (change)="onChangeCategoria(idcategoria.value)">
+                                <option name="id_categoria" id="id_categoria"
+                                        *ngFor="let categoria of categorias" value="{{categoria.id}}">{{categoria.nome}}
+                                </option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_subcategoria">Subcategoria</label>
+                        <p>
+                            <select formControlName="id_subcategoria" >
+                                <option name="id_subcategoria" id="id_subcategoria"
+                                        *ngFor="let subcategoria of subcategorias" value="{{subcategoria.id}}">{{subcategoria.nome}}</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Nome do produto</label>
+                        <input type="text" class="form-control" placeholder="Insira o nome"
+                               id="nome" formControlName="nome" >
+                        <app-control-messages [control]="editarProdutoForm.get('nome')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>Pergunta 1</label>
+                        <input type="text" class="form-control" placeholder="Insira a 1º pergunta"
+                               id="pergunta1" formControlName="pergunta1" >
+                    </div>
+                    <div class="form-group">
+                        <label for="pergunta2">Pergunta 2</label>
+                        <input type="text" class="form-control" placeholder="Insira a 2º pergunta"
+                               id="pergunta2" formControlName="pergunta2" >
+                    </div>
+                    <div class="form-group">
+                        <label for="pergunta3">Pergunta 3</label>
+                        <input type="text" class="form-control" placeholder="Insira a 3º pergunta"
+                               id="pergunta3" formControlName="pergunta3" >
+                    </div>
+                    <div class="form-group">
+                        <label for="pergunta4">Pergunta 4</label>
+                        <input type="text" class="form-control" placeholder="Insira a 4º pergunta"
+                               id="pergunta4" formControlName="pergunta4" >
+                    </div>
+                    <div class="form-group">
+                        <label for="pergunta5">Pergunta 5</label>
+                        <input type="text" class="form-control" placeholder="Insira a 5º pergunta"
+                               id="pergunta5" formControlName="pergunta5" >
+                    </div>
+                    <div class="form-group">
+                        <label for="pergunta6">Pergunta 6</label>
+                        <input type="text" class="form-control" placeholder="Insira a 6º pergunta"
+                               id="pergunta6" formControlName="pergunta6" >
+                    </div>
+                    <div class="form-group">
+                        <label for="pergunta7">Pergunta 7</label>
+                        <input type="text" class="form-control" placeholder="Insira a 7º pergunta"
+                               id="pergunta7" formControlName="pergunta7" >
+                    </div>
+                    <div class="form-group">
+                        <label for="pergunta8">Pergunta 8</label>
+                        <input type="text" class="form-control" placeholder="Insira a 8º pergunta"
+                               id="pergunta8" formControlName="pergunta8" >
+                    </div>
+                    <div class="form-group">
+                        <label for="pergunta9">Pergunta 9</label>
+                        <input type="text" class="form-control" placeholder="Insira a 9º pergunta"
+                               id="pergunta9" formControlName="pergunta9" >
+                    </div>
+                    <div class="form-group">
+                        <label for="pergunta10">Pergunta 10</label>
+                        <input type="text" class="form-control" placeholder="Insira a 1º pergunta"
+                               id="pergunta10" formControlName="pergunta10" >
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="!editarProdutoForm.valid">Submeter</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

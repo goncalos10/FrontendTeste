@@ -1,0 +1,47 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-info">
+                <h4 class="card-title">{{pageTitle}}</h4>
+            </div>
+
+            <div class="container">
+                <form (ngSubmit)="saveUtilizador()" [formGroup]="editarUtilizadorForm">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" placeholder="Insira o nome"
+                               id="nome" formControlName="nome" >
+                        <app-control-messages [control]="editarUtilizadorForm.get('nome')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Username</label>
+                        <input type="text" class="form-control" placeholder="Insira o username"
+                               id="username" formControlName="username" >
+                        <app-control-messages [control]="editarUtilizadorForm.get('username')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="telemovel">Telemovel</label>
+                        <input type="number" class="form-control" placeholder="Insira o telemovel"
+                               id="telemovel" formControlName="telemovel" >
+                        <app-control-messages [control]="editarUtilizadorForm.get('telemovel')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" placeholder="Insira o email"
+                               id="email" formControlName="email">
+                        <app-control-messages [control]="editarUtilizadorForm.get('email')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="Insira a password"
+                               id="password" formControlName="password">
+                        <app-control-messages [control]="editarUtilizadorForm.get('password')"></app-control-messages>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="!editarUtilizadorForm.valid">Submeter</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

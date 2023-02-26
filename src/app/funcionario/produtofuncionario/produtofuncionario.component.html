@@ -1,0 +1,11 @@
+<div class="container">
+
+    <div class="products-container">
+
+        <div  *ngFor="let produto of produtos"  [routerLink]="['/funcionario','criar', produto.id]" class="product" data-name="p-1">
+            <!--- <img src="images/1.png" alt=""> --->
+            <button>{{produto.nome}}</button>
+        </div>
+
+    </div>
+</div>

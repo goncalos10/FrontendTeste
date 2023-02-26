@@ -1,0 +1,150 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-info">
+                <h4 class="card-title">Checklist {{produto.nome}} </h4>
+            </div>
+
+            <div class="container">
+                <form (ngSubmit)="saveChecklist()" [formGroup]="editarChecklistForm">
+                    <input type="hidden" class="form-control" value="1" placeholder="{{produto.nome}}"
+                               id="id_prod_checklist" formControlName="id_prod_checklist" [(ngModel)]="produto.id"
+                               disabled>
+                        <input type="hidden" placeholder="{{loggedUtilizador.nome}}" [(ngModel)]="loggedUtilizador.id"
+                               class="form-control" id="id_utilizador_checklist"
+                               formControlName="id_utilizador_checklist" >
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="date" class="form-control" id="data" formControlName="data">
+                        <app-control-messages [control]="editarChecklistForm.get('data')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="encomenda">Nº Encomenda</label>
+                        <input placeholder="Nº encomenda" type="text" class="form-control" id="encomenda" formControlName="encomenda">
+                        <app-control-messages [control]="editarChecklistForm.get('encomenda')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <input placeholder="Estado" type="text" class="form-control" id="estado" formControlName="estado">
+                        <app-control-messages [control]="editarChecklistForm.get('estado')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta1}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta11" type="radio" name="resposta1" formControlName="resposta1" value="Sim">
+                            <label for="resposta11">Sim</label>
+                            &nbsp;
+                            <input id="resposta12" type="radio" name="resposta1" formControlName="resposta1" value="Nao">
+                            <label for="resposta12">Nao</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta2}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta21" name="resposta2" formControlName="resposta2" type="radio" value="Sim">
+                            <label for="resposta21">Sim</label>
+                            &nbsp;
+                            <input id="resposta22" name="resposta2" formControlName="resposta2" type="radio" value="Nao">
+                            <label for="resposta22">Não</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta3}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta31" name="resposta3" formControlName="resposta3" type="radio" value="Sim">
+                            <label for="resposta31">Sim</label>
+                            &nbsp;
+                            <input id="resposta32" name="resposta3" formControlName="resposta3" type="radio" value="Nao">
+                            <label for="resposta32">Nao</label>
+                        </div>
+                        <app-control-messages [control]="editarChecklistForm.get('resposta3')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta4}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta41" name="resposta4" formControlName="resposta4" type="radio" value="Sim">
+                            <label for="resposta41">Sim</label>
+                            &nbsp;
+                            <input id="resposta42" name="resposta4" formControlName="resposta4" type="radio" value="Nao">
+                            <label for="resposta42">Nao</label>
+                        </div>
+                        <app-control-messages [control]="editarChecklistForm.get('resposta4')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta5}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta51" name="resposta5" formControlName="resposta5" type="radio" value="Sim">
+                            <label for="resposta51">Sim</label>
+                            &nbsp;
+                            <input id="resposta52" name="resposta5" formControlName="resposta5" type="radio" value="Nao">
+                            <label for="resposta52">Nao</label>
+                        </div>
+                        <app-control-messages [control]="editarChecklistForm.get('resposta5')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta6}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta61" name="resposta6" formControlName="resposta6" type="radio" value="Sim">
+                            <label for="resposta61">Sim</label>
+                            &nbsp;
+                            <input id="resposta62" name="resposta6" formControlName="resposta6" type="radio" value="Nao">
+                            <label for="resposta62">Nao</label>
+                        </div>
+                        <app-control-messages [control]="editarChecklistForm.get('resposta6')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta7}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta71" name="resposta7" formControlName="resposta7" type="radio" value="Sim">
+                            <label for="resposta71">Sim</label>
+                            &nbsp;
+                            <input id="resposta72" name="resposta7" formControlName="resposta7" type="radio" value="Nao">
+                            <label for="resposta72">Nao</label>
+                        </div>
+                        <app-control-messages [control]="editarChecklistForm.get('resposta7')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta8}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta81" name="resposta8" formControlName="resposta8" type="radio" value="Sim">
+                            <label for="resposta81">Sim</label>
+                            &nbsp;
+                            <input id="resposta82" name="resposta8" formControlName="resposta8" type="radio" value="Nao">
+                            <label for="resposta82">Nao</label>
+                        </div>
+                        <app-control-messages [control]="editarChecklistForm.get('resposta8')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta9}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta91" name="resposta9" formControlName="resposta9" type="radio" value="Sim">
+                            <label for="resposta91">Sim</label>
+                            &nbsp;
+                            <input id="resposta92" name="resposta9" formControlName="resposta9" type="radio" value="Nao">
+                            <label for="resposta92">Nao</label>
+                        </div>
+                        <app-control-messages [control]="editarChecklistForm.get('resposta9')"></app-control-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>{{produto.pergunta10}}</label>
+                        <div class="radio-toolbar">
+                            <input id="resposta101" name="resposta10" formControlName="resposta10" type="radio" value="Sim">
+                            <label for="resposta101">Sim</label>
+                            &nbsp;
+                            <input id="resposta102" name="resposta10" formControlName="resposta10" type="radio" value="Nao">
+                            <label for="resposta102">Nao</label>
+                        </div>
+                        <app-control-messages [control]="editarChecklistForm.get('resposta10')"></app-control-messages>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="!editarChecklistForm.valid">Submeter</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var test = {{produto.id}};
+    document.getElementById("id_prod_checklist").value = test;
+</script>
