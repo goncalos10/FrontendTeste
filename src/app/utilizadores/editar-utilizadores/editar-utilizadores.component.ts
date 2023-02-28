@@ -58,6 +58,7 @@ export class EditarUtilizadoresComponent implements OnInit {
     // Read the user Id from the route parameter
     this.sub = this.route.paramMap.subscribe(
         params => {
+          const id_tipo = Number(this.route.snapshot.paramMap.get('id_tipo'));
           const id_utilizador = Number(this.route.snapshot.paramMap.get('id_utilizador'));
           if (id_utilizador !== 0) {
             this.getUtilizador(id_utilizador);
@@ -96,9 +97,15 @@ export class EditarUtilizadoresComponent implements OnInit {
       this.editarUtilizadorForm.reset();
     }
     this.utilizador = utilizador;
+    const id_tipo = Number(this.route.snapshot.paramMap.get('id_tipo'));
+    const id_utilizador = Number(this.route.snapshot.paramMap.get('id_utilizador'));
 
     if (this.utilizador === undefined) {
-        this.pageTitle = 'Adicionar Utilizador';
+      if (id_tipo === 2) {
+        this.pageTitle = 'Adicionar Funcionário';
+      } else if (id_tipo === 3) {
+        this.pageTitle = 'Adicionar Cliente';
+      }
     } else {
       this.pageTitle = `Editar Utilizador: ${this.utilizador.nome}`;
       // Update the data on the form
@@ -116,11 +123,11 @@ export class EditarUtilizadoresComponent implements OnInit {
       if (this.editarUtilizadorForm.dirty) {
         const utilizador = { ...this.utilizador, ...this.editarUtilizadorForm.value };
         utilizador.password = sha512(utilizador.password);
-        utilizador.id_tipo_utilizador = 2;
         const id_utilizador = Number(this.route.snapshot.paramMap.get('id'));
+        const id_tipo = Number(this.route.snapshot.paramMap.get('id_tipo'));
+        utilizador.id_tipo_utilizador = id_tipo;
 
         if (id_utilizador === 0) {
-          utilizador.id_tipo_utilizador = 2;
           this.utilizadorService.createUtilizador(utilizador)
               .subscribe({
                 next: () => {

@@ -25,7 +25,7 @@ export const AdminLayoutRoutes: Routes = [
     {path: 'dashboard', component: DashboardComponent},
     {path: 'utilizadores', component: UtilizadoresComponent},
     {path: 'clientes', component: ClientesComponent},
-    {path: 'utilizadores/editar/:id_utilizador', component: EditarUtilizadoresComponent},
+    {path: 'utilizadores/editar/:id_tipo/:id_utilizador', component: EditarUtilizadoresComponent},
     {path: 'categorias', component: CategoriasComponent},
     {path: 'categorias/editar/:id_categoria', component: EditarCategoriasComponent},
     {path: 'subcategorias', component: SubcategoriasComponent},

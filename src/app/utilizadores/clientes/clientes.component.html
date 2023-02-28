@@ -22,7 +22,7 @@
                         <td> {{fornecedor.email}} </td>
                         <td> {{fornecedor.telemovel}}</td>
                         <td class="td-actions text-center">
-                            <button [routerLink]="['/utilizadores','editar', fornecedor.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                            <button [routerLink]="['/utilizadores','editar', '3', fornecedor.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
                                     matTooltip="Editar Cliente"
                                     type="button">
                                 <i class="material-icons">edit</i>
@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td class="td-actions text-center">
-                            <button [routerLink]="['/utilizadores','editar', 0]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                            <button [routerLink]="['/utilizadores','editar', 3, 0]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
                                     matTooltip="Adicionar Cliente"
                                     type="button">
                                 <i class="material-icons">add</i>

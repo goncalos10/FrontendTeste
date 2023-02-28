@@ -22,7 +22,7 @@
                      <td> {{utilizador.email}} </td>
                      <td> {{utilizador.telemovel}}</td>
                      <td class="td-actions text-center">
-                        <button [routerLink]="['/utilizadores','editar', utilizador.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                        <button [routerLink]="['/utilizadores','editar', 2, utilizador.id]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
                                 matTooltip="Editar Utilizador"
                                 type="button">
                             <i class="material-icons">edit</i>
@@ -37,7 +37,7 @@
                   </tr>
                   <tr>
                     <td class="td-actions text-center">
-                        <button [routerLink]="['/utilizadores','editar', 0]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                        <button [routerLink]="['/utilizadores','editar', 2, 0]" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
                                 matTooltip="Adicionar Utilizador"
                                 type="button">
                             <i class="material-icons">add</i>
